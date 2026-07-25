@@ -4,6 +4,8 @@ One-pager institucional da Empirika (Recife-PE). Astro 5 + Tailwind 4 + GSAP.
 
 ## Desenvolvimento
 
+Requer Node 20+.
+
 - `npm install`
 - `npm run dev` → http://localhost:4321 (PT) e /en/ (EN)
 - `npm run build` → `dist/`

@@ -98,7 +98,8 @@ no-corporate-speak voice. `--font-display` → Big Shoulders,
 `--font-body` → Schibsted Grotesk. No third face; no mono.
 
 ### Hierarchy
-- **Display** (Big Shoulders 800, `clamp(4rem, 13vw, 12.5rem)`, line-height
+- **Display** (Big Shoulders 800, `clamp(3.75rem, 13vw, 12.5rem)` (floor
+  trimmed from 4rem so the EN copy still wraps cleanly at 390px), line-height
   0.88, uppercase, letter-spacing 0.01em): hero statement and section-opening
   proclamations. The page's graphic element — set in stacked lines, edge to
   edge.
