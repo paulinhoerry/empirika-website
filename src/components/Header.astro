@@ -10,16 +10,16 @@ const links = [
   { href: '#contact', label: t.contact },
 ];
 ---
-<header class="fixed top-0 inset-x-0 z-40">
-  <nav class="flex items-center justify-between px-6 py-4" aria-label="Main">
-    <a href="#main" class="font-bold tracking-tight text-lg">empirika<span class="text-carbon">.</span></a>
+<header class="fixed top-0 inset-x-0 z-40 bg-ink border-b border-line">
+  <nav class="px-gutter flex items-center justify-between py-4" aria-label="Main">
+    <a href="#main" class="font-display font-bold uppercase text-2xl leading-none tracking-[0.04em]">Empirika<span class="text-muted">.</span></a>
     <div class="flex items-center gap-6">
-      <ul class="hidden md:flex gap-6 text-sm">
+      <ul class="hidden md:flex gap-7">
         {links.map((l) => (
-          <li><a href={l.href} class="hover:text-carbon transition-colors">{l.label}</a></li>
+          <li><a href={l.href} class="type-label text-muted hover:text-paper hover:underline decoration-2 underline-offset-8 transition-colors">{l.label}</a></li>
         ))}
       </ul>
-      <a href={t.langHref} aria-label={t.langAria} class="text-sm border border-current px-2 py-1 rounded">{t.langLabel}</a>
+      <a href={t.langHref} aria-label={t.langAria} class="type-label border border-line px-2.5 py-1.5 hover:border-paper transition-colors">{t.langLabel}</a>
     </div>
   </nav>
 </header>

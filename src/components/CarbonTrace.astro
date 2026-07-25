@@ -3,10 +3,20 @@ import type { Dictionary } from '../i18n';
 interface Props { t: Dictionary['carbontrace']; }
 const { t } = Astro.props;
 ---
-<section id="carbontrace" class="px-6 py-32" data-animate="reveal">
-  <p class="text-sm uppercase tracking-widest text-carbon">{t.kicker}</p>
-  <h2 class="font-display text-5xl md:text-8xl uppercase text-carbon">{t.heading}</h2>
-  <p class="mt-4 text-2xl max-w-2xl">{t.tagline}</p>
-  {t.paragraphs.map((p) => <p class="mt-6 max-w-2xl text-lg text-muted leading-relaxed">{p}</p>)}
-  <a href="#contact" class="mt-10 inline-block border border-carbon text-carbon px-6 py-3 uppercase text-sm tracking-wide hover:bg-carbon hover:text-ink transition-colors">{t.cta}</a>
+<section id="carbontrace" class="bg-carbon-deep px-gutter py-section" data-animate="reveal">
+  <div class="mx-auto max-w-[1440px]">
+    <div class="flex items-center gap-5 mb-10">
+      <span class="type-label text-carbon">03</span>
+      <span class="h-px flex-1 bg-carbon/30" aria-hidden="true"></span>
+      <p class="type-label text-carbon">{t.kicker}</p>
+    </div>
+    <h2 class="type-display text-carbon -ml-[0.04em]">{t.heading}</h2>
+    <p class="mt-8 max-w-[28ch] text-2xl md:text-3xl font-bold leading-tight">{t.tagline}</p>
+    <div class="lg:grid lg:grid-cols-12 lg:gap-x-8 mt-10">
+      <div class="lg:col-start-4 lg:col-span-7 max-w-[65ch]">
+        {t.paragraphs.map((p) => <p class="mb-5 text-lg leading-relaxed text-paper/80">{p}</p>)}
+        <a href="#contact" class="type-label mt-5 inline-block border border-carbon text-carbon px-8 py-4 hover:bg-carbon hover:text-carbon-deep transition-colors">{t.cta}</a>
+      </div>
+    </div>
+  </div>
 </section>

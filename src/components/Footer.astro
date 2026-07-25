@@ -4,7 +4,9 @@ interface Props { t: Dictionary['footer']; }
 const { t } = Astro.props;
 const year = new Date().getFullYear();
 ---
-<footer class="px-6 py-10 text-sm text-muted">
-  <p>{t.tagline}</p>
-  <p>© {year} Empirika. {t.rights}</p>
+<footer class="border-t border-line px-gutter py-10">
+  <div class="mx-auto max-w-[1440px] flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+    <p class="type-label text-muted">{t.tagline}</p>
+    <p class="type-label text-muted">© {year} Empirika · {t.rights}</p>
+  </div>
 </footer>
