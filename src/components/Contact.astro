@@ -7,7 +7,21 @@ const accessKey = import.meta.env.PUBLIC_WEB3FORMS_KEY ?? '';
 <section id="contact" class="px-6 py-24" data-animate="reveal">
   <h2 class="font-display text-4xl md:text-6xl uppercase mb-4">{t.heading}</h2>
   <p class="text-lg text-muted mb-10">{t.subtitle}</p>
-  <form id="contact-form" method="POST" action="https://api.web3forms.com/submit" class="max-w-xl grid gap-6" novalidate data-locale={locale}>
+  <form
+    id="contact-form"
+    method="POST"
+    action="https://api.web3forms.com/submit"
+    class="max-w-xl grid gap-6"
+    novalidate
+    data-locale={locale}
+    data-msg-sending={t.form.sending}
+    data-msg-success={t.form.success}
+    data-msg-error={t.form.error}
+    data-msg-required={t.form.requiredError}
+    data-msg-email={t.form.emailError}
+    data-contact-email={t.email}
+    data-msg-submit={t.form.submit}
+  >
     <input type="hidden" name="access_key" value={accessKey} />
     <input type="checkbox" name="botcheck" class="hidden" tabindex="-1" autocomplete="off" />
     <div>
@@ -37,3 +51,7 @@ const accessKey = import.meta.env.PUBLIC_WEB3FORMS_KEY ?? '';
     {t.location}
   </p>
 </section>
+
+<script>
+  import '../scripts/contact-form.ts';
+</script>
