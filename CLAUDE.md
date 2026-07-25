@@ -4,7 +4,13 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Current State
 
-This is the Empirika website project. It is currently an empty scaffold — there is no source code, build system, or framework set up yet. When the site is scaffolded (framework chosen, package.json created, etc.), update this file with build/dev/lint commands and architecture notes.
+Site estático Astro 5 + Tailwind 4 + GSAP. Comandos:
+
+- `npm run dev` — dev server em http://localhost:4321
+- `npm run build` — build de produção em `dist/`
+- `npm run preview` — serve o build
+
+Rotas: `/` (PT-BR) e `/en/` (EN). Copy em `src/i18n/*.json`. Tokens de design em `src/styles/global.css` (`@theme`). Animações centralizadas em `src/scripts/animations.ts`.
 
 ## Design Workflow: Impeccable
 

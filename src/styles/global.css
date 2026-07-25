@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #0b0b0d;      /* fundo dark */
+  --color-paper: #f2f0ea;    /* texto principal */
+  --color-muted: #8a8a93;    /* texto secundário */
+  --color-carbon: #35d97b;   /* acento exclusivo CarbonTrace */
+  --font-display: system-ui, sans-serif;
+  --font-body: system-ui, sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+body { background-color: var(--color-ink); color: var(--color-paper); }
