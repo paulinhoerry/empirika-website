@@ -2,13 +2,24 @@
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+import Hero from '../../components/Hero.astro';
+import About from '../../components/About.astro';
+import Services from '../../components/Services.astro';
+import CarbonTrace from '../../components/CarbonTrace.astro';
+import Recife from '../../components/Recife.astro';
+import Contact from '../../components/Contact.astro';
 import { getDictionary } from '../../i18n';
 const t = getDictionary('en');
 ---
 <Layout locale="en" t={t}>
   <Header t={t.nav} />
   <main id="main">
-    <h1 class="text-4xl font-bold p-8 pt-24">{t.hero.titleLines.join(' ')}</h1>
+    <Hero t={t.hero} />
+    <About t={t.about} />
+    <Services t={t.services} />
+    <CarbonTrace t={t.carbontrace} />
+    <Recife t={t.recife} />
+    <Contact t={t.contact} locale="en" />
   </main>
   <Footer t={t.footer} />
 </Layout>

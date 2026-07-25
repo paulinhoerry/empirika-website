@@ -1,0 +1,12 @@
+---
+import type { Dictionary } from '../i18n';
+interface Props { t: Dictionary['carbontrace']; }
+const { t } = Astro.props;
+---
+<section id="carbontrace" class="px-6 py-32" data-animate="reveal">
+  <p class="text-sm uppercase tracking-widest text-carbon">{t.kicker}</p>
+  <h2 class="font-display text-5xl md:text-8xl uppercase text-carbon">{t.heading}</h2>
+  <p class="mt-4 text-2xl max-w-2xl">{t.tagline}</p>
+  {t.paragraphs.map((p) => <p class="mt-6 max-w-2xl text-lg text-muted leading-relaxed">{p}</p>)}
+  <a href="#contact" class="mt-10 inline-block border border-carbon text-carbon px-6 py-3 uppercase text-sm tracking-wide hover:bg-carbon hover:text-ink transition-colors">{t.cta}</a>
+</section>

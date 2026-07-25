@@ -1,0 +1,13 @@
+---
+import type { Dictionary } from '../i18n';
+interface Props { t: Dictionary['hero']; }
+const { t } = Astro.props;
+---
+<section class="min-h-svh flex flex-col justify-center px-6 pt-24" data-animate="hero">
+  <p class="text-sm uppercase tracking-widest text-muted">{t.kicker}</p>
+  <h1 class="font-display text-[clamp(3rem,12vw,10rem)] leading-[0.95] uppercase">
+    {t.titleLines.map((line) => <span class="block">{line}</span>)}
+  </h1>
+  <p class="mt-6 max-w-xl text-lg text-muted">{t.subtitle}</p>
+  <a href="#contact" class="mt-8 inline-block w-fit border border-current px-6 py-3 uppercase text-sm tracking-wide hover:text-carbon transition-colors">{t.cta}</a>
+</section>
