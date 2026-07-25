@@ -35,14 +35,14 @@ mm.add('(prefers-reduced-motion: no-preference)', () => {
   // brief's defaults accordingly.
   //
   // Each section wraps its whole content in a single `.mx-auto` container
-  // (Task 7), so `el.children` resolves to just that one wrapper — stagger
-  // would have nothing to stagger against. Reach one level deeper into the
-  // wrapper's children (registration mark row, heading, body block, etc.)
-  // when present, falling back to `el.children` for any section that isn't
-  // wrapped that way.
+  // (Task 7), so animating `el.children` directly would only ever find that
+  // one wrapper — nothing to stagger. The wrapper carries an explicit
+  // `data-animate-children` marker (set in each section component) so the
+  // stagger target is a semantic contract, not inferred from sibling count;
+  // falls back to `el` for any section that doesn't opt in.
   document.querySelectorAll<HTMLElement>('[data-animate="reveal"]').forEach((el) => {
-    const wrapper = el.children.length === 1 ? el.children[0] : el;
-    gsap.from(wrapper.children, {
+    const target = el.querySelector<HTMLElement>('[data-animate-children]') ?? el;
+    gsap.from(target.children, {
       y: 28,
       opacity: 0,
       duration: 0.55,

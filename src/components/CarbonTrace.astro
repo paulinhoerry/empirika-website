@@ -4,7 +4,7 @@ interface Props { t: Dictionary['carbontrace']; }
 const { t } = Astro.props;
 ---
 <section id="carbontrace" class="bg-carbon-deep px-gutter py-section" data-animate="reveal">
-  <div class="mx-auto max-w-[1440px]">
+  <div class="mx-auto max-w-[1440px]" data-animate-children>
     <div class="flex items-center gap-5 mb-10">
       <span class="type-label text-carbon">03</span>
       <span class="h-px flex-1 bg-carbon/30" aria-hidden="true"></span>
