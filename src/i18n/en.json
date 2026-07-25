@@ -1,0 +1,79 @@
+{
+  "meta": {
+    "title": "Empirika — Software with a Recife accent",
+    "description": "Empirika is a software company from Recife, Brazil: custom development and in-house products like CarbonTrace, a carbon credit platform."
+  },
+  "a11y": { "skip": "Skip to content" },
+  "nav": {
+    "about": "About us",
+    "services": "What we do",
+    "carbontrace": "CarbonTrace",
+    "recife": "Recife",
+    "contact": "Contact",
+    "langLabel": "PT",
+    "langHref": "/",
+    "langAria": "Mudar para português"
+  },
+  "hero": {
+    "kicker": "Empirika — Recife, Brazil",
+    "titleLines": ["SOFTWARE", "WITH A RECIFE", "ACCENT"],
+    "subtitle": "We build custom digital products for those who need them — and products of our own for what the world needs.",
+    "cta": "Talk to us"
+  },
+  "about": {
+    "heading": "About us",
+    "paragraphs": [
+      "Empirika was born in Recife, between the mangroves and Porto Digital. We are a software company that loves two things: solving hard problems and watching code become business.",
+      "We work in two modes. In the first, we build custom software for companies that need technology done right. In the second, we create our own products — like CarbonTrace.",
+      "No corporate jargon, no empty promises. We'd rather deliver."
+    ]
+  },
+  "services": {
+    "heading": "What we do",
+    "items": [
+      { "title": "Custom digital products", "description": "From idea to deploy: web and mobile applications designed for your problem, not for our portfolio." },
+      { "title": "Platforms and integrations", "description": "Systems that talk to each other: APIs, integrations and automations that remove manual work from the way." },
+      { "title": "Data and intelligence", "description": "Pipelines, dashboards and models that turn raw data into decisions." },
+      { "title": "System evolution", "description": "That legacy system nobody wants to touch? We modernize it without stopping your operation." }
+    ]
+  },
+  "carbontrace": {
+    "kicker": "In-house product",
+    "heading": "CarbonTrace",
+    "tagline": "Carbon credits with backing, trail and proof.",
+    "paragraphs": [
+      "CarbonTrace is our carbon credit platform: it connects projects that capture or avoid emissions to companies that need to offset theirs — with verification and traceability at every step.",
+      "Every credit carries its own history: origin, methodology, verification and retirement. The transparency the voluntary carbon market still owes the planet."
+    ],
+    "cta": "Discover CarbonTrace"
+  },
+  "recife": {
+    "heading": "Recife is not a footnote",
+    "paragraphs": [
+      "Being in Recife is not an accident — it's a stance. The city hosts one of the largest technology parks in Brazil, Porto Digital, and a tech scene that has been growing for over two decades.",
+      "From here we build for anywhere. But the accent? That stays."
+    ]
+  },
+  "contact": {
+    "heading": "Shall we talk?",
+    "subtitle": "Tell us what you need. We answer fast.",
+    "email": "contato@empirika.com.br",
+    "location": "Recife, Pernambuco — Brazil",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "company": "Company",
+      "message": "Message",
+      "submit": "Send message",
+      "sending": "Sending…",
+      "success": "Message sent! We'll get back to you soon.",
+      "error": "Could not send. Try again or write to",
+      "requiredError": "This field is required.",
+      "emailError": "Enter a valid email."
+    }
+  },
+  "footer": {
+    "tagline": "Software made in Recife.",
+    "rights": "All rights reserved."
+  }
+}
