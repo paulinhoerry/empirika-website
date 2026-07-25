@@ -32,5 +32,8 @@ const altLang = isPt ? 'en' : 'pt-BR';
     <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:z-[70] focus:bg-paper focus:text-ink focus:px-4 focus:py-2">{t.a11y.skip}</a>
     <slot />
     <div class="grain" aria-hidden="true"></div>
+    <script>
+      import '../scripts/animations.ts';
+    </script>
   </body>
 </html>
