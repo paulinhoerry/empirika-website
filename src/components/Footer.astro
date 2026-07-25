@@ -1,0 +1,10 @@
+---
+import type { Dictionary } from '../i18n';
+interface Props { t: Dictionary['footer']; }
+const { t } = Astro.props;
+const year = new Date().getFullYear();
+---
+<footer class="px-6 py-10 text-sm text-muted">
+  <p>{t.tagline}</p>
+  <p>© {year} Empirika. {t.rights}</p>
+</footer>

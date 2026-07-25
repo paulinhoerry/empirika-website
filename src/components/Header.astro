@@ -1,0 +1,25 @@
+---
+import type { Dictionary } from '../i18n';
+interface Props { t: Dictionary['nav']; }
+const { t } = Astro.props;
+const links = [
+  { href: '#about', label: t.about },
+  { href: '#services', label: t.services },
+  { href: '#carbontrace', label: t.carbontrace },
+  { href: '#recife', label: t.recife },
+  { href: '#contact', label: t.contact },
+];
+---
+<header class="fixed top-0 inset-x-0 z-40">
+  <nav class="flex items-center justify-between px-6 py-4" aria-label="Main">
+    <a href="#main" class="font-bold tracking-tight text-lg">empirika<span class="text-carbon">.</span></a>
+    <div class="flex items-center gap-6">
+      <ul class="hidden md:flex gap-6 text-sm">
+        {links.map((l) => (
+          <li><a href={l.href} class="hover:text-carbon transition-colors">{l.label}</a></li>
+        ))}
+      </ul>
+      <a href={t.langHref} aria-label={t.langAria} class="text-sm border border-current px-2 py-1 rounded">{t.langLabel}</a>
+    </div>
+  </nav>
+</header>
