@@ -55,6 +55,8 @@
 
 html {
   scroll-behavior: smooth;
+  /* Fixed header measures ~66.5px; pad anchor jumps so section tops clear it. */
+  scroll-padding-top: 4.5rem;
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
