@@ -25,26 +25,24 @@ const accessKey = import.meta.env.PUBLIC_WEB3FORMS_KEY ?? '';
         action="https://api.web3forms.com/submit"
         class="mt-14 lg:mt-0 lg:col-start-7 lg:col-span-6 max-w-xl grid gap-7"
         novalidate
-        data-locale={locale}
         data-msg-sending={t.form.sending}
         data-msg-success={t.form.success}
         data-msg-error={t.form.error}
         data-msg-required={t.form.requiredError}
         data-msg-email={t.form.emailError}
         data-contact-email={t.email}
-        data-msg-submit={t.form.submit}
       >
         <input type="hidden" name="access_key" value={accessKey} />
         <input type="checkbox" name="botcheck" class="hidden" tabindex="-1" autocomplete="off" />
         <div>
           <label for="cf-name" class="type-label text-muted block mb-2">{t.form.name}</label>
-          <input id="cf-name" name="name" type="text" required class="w-full bg-raised border border-muted px-4 py-3 text-paper focus:border-paper outline-none transition-colors" />
-          <p class="field-error text-sm text-paper mt-2 hidden"></p>
+          <input id="cf-name" name="name" type="text" required aria-describedby="cf-name-error" class="w-full bg-raised border border-muted px-4 py-3 text-paper focus:border-paper outline-none transition-colors" />
+          <p id="cf-name-error" class="field-error text-sm text-paper mt-2 hidden"></p>
         </div>
         <div>
           <label for="cf-email" class="type-label text-muted block mb-2">{t.form.email}</label>
-          <input id="cf-email" name="email" type="email" required class="w-full bg-raised border border-muted px-4 py-3 text-paper focus:border-paper outline-none transition-colors" />
-          <p class="field-error text-sm text-paper mt-2 hidden"></p>
+          <input id="cf-email" name="email" type="email" required aria-describedby="cf-email-error" class="w-full bg-raised border border-muted px-4 py-3 text-paper focus:border-paper outline-none transition-colors" />
+          <p id="cf-email-error" class="field-error text-sm text-paper mt-2 hidden"></p>
         </div>
         <div>
           <label for="cf-company" class="type-label text-muted block mb-2">{t.form.company}</label>
@@ -52,8 +50,8 @@ const accessKey = import.meta.env.PUBLIC_WEB3FORMS_KEY ?? '';
         </div>
         <div>
           <label for="cf-message" class="type-label text-muted block mb-2">{t.form.message}</label>
-          <textarea id="cf-message" name="message" rows="5" required class="w-full bg-raised border border-muted px-4 py-3 text-paper focus:border-paper outline-none transition-colors"></textarea>
-          <p class="field-error text-sm text-paper mt-2 hidden"></p>
+          <textarea id="cf-message" name="message" rows="5" required aria-describedby="cf-message-error" class="w-full bg-raised border border-muted px-4 py-3 text-paper focus:border-paper outline-none transition-colors"></textarea>
+          <p id="cf-message-error" class="field-error text-sm text-paper mt-2 hidden"></p>
         </div>
         <button type="submit" class="type-label w-fit border border-paper px-8 py-4 hover:bg-paper hover:text-ink transition-colors disabled:opacity-60 disabled:pointer-events-none">{t.form.submit}</button>
         <p id="form-status" role="status" aria-live="polite" class="text-sm"></p>

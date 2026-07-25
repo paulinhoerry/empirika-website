@@ -9,17 +9,19 @@ mm.add('(prefers-reduced-motion: no-preference)', () => {
   // Hero: the one authored focal moment on the page — title lines stagger up,
   // then kicker/subtitle/CTA follow. Duration trimmed to 0.8s to sit inside
   // impeccable's "authored focal entrance" band (500-800ms); see animate.md.
-  gsap.from('[data-animate="hero"] h1 > span', {
+  gsap.from('[data-animate="hero"] [data-animate-line]', {
     yPercent: 60,
     opacity: 0,
     duration: 0.8,
     ease: 'power3.out',
     stagger: 0.1,
   });
-  // Kicker, subtitle and CTA are all direct children of the hero section in
-  // the current markup, so `> p, > a` still matches all three in document
-  // order (kicker, subtitle, CTA) and they follow the title as one group.
-  gsap.from('[data-animate="hero"] > p, [data-animate="hero"] > a', {
+  // Kicker, subtitle and CTA are each tagged with an explicit
+  // `data-animate-item` anchor (rather than relying on their structural
+  // position as direct children of the hero section) so the selector keeps
+  // working regardless of the wrapper markup around them; document order
+  // (kicker, subtitle, CTA) still drives the stagger.
+  gsap.from('[data-animate="hero"] [data-animate-item]', {
     y: 24,
     opacity: 0,
     duration: 0.7,
