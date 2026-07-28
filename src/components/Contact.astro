@@ -1,0 +1,51 @@
+---
+import { t, type Locale } from '../i18n';
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const c = t(locale);
+const mailto = 'paulinhoerry@gmail.com';
+---
+<section id="contact" class="border-t border-line px-6 py-24 md:px-12 md:py-32">
+  <p class="font-mono text-xs uppercase tracking-widest text-mute" data-reveal>{c.contact.label}</p>
+  <h2 class="mt-8 font-display text-[clamp(2.5rem,6vw,5.5rem)] font-semibold leading-[1.02] tracking-tight" data-reveal>
+    <span class="block text-paper">{c.contact.title1}</span>
+    <span class="block text-mute">{c.contact.title2}</span>
+  </h2>
+  <form data-contact-form novalidate class="mt-16 grid max-w-2xl gap-8" data-reveal>
+    <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" class="hidden" />
+    <label class="grid gap-2 font-mono text-xs uppercase tracking-widest text-mute">
+      {c.contact.name}
+      <input required minlength="2" maxlength="100" name="name" type="text"
+        class="border-b border-line bg-transparent py-3 font-display text-lg normal-case tracking-normal text-paper outline-none transition-colors focus:border-paper" />
+    </label>
+    <label class="grid gap-2 font-mono text-xs uppercase tracking-widest text-mute">
+      {c.contact.email}
+      <input required name="email" type="email"
+        class="border-b border-line bg-transparent py-3 font-display text-lg normal-case tracking-normal text-paper outline-none transition-colors focus:border-paper" />
+    </label>
+    <label class="grid gap-2 font-mono text-xs uppercase tracking-widest text-mute">
+      {c.contact.company}
+      <input maxlength="100" name="company" type="text"
+        class="border-b border-line bg-transparent py-3 font-display text-lg normal-case tracking-normal text-paper outline-none transition-colors focus:border-paper" />
+    </label>
+    <label class="grid gap-2 font-mono text-xs uppercase tracking-widest text-mute">
+      {c.contact.message}
+      <textarea required minlength="10" maxlength="5000" name="message" rows="5"
+        class="resize-y border-b border-line bg-transparent py-3 font-display text-lg normal-case tracking-normal text-paper outline-none transition-colors focus:border-paper"></textarea>
+    </label>
+    <button type="submit"
+      class="justify-self-start border border-paper px-8 py-4 font-mono text-xs uppercase tracking-widest transition-colors hover:bg-paper hover:text-ink disabled:opacity-50">
+      {c.contact.submit}
+    </button>
+    <p aria-live="polite" data-status data-sending={c.contact.sending} data-success={c.contact.success}
+      data-error={c.contact.error} data-mailto={mailto} class="min-h-6 font-mono text-xs text-mute"></p>
+  </form>
+  <p class="mt-10 font-mono text-sm text-mute">
+    <a href={`mailto:${mailto}`} class="underline underline-offset-4 hover:text-paper">{mailto}</a>
+  </p>
+</section>
+
+<script>
+  import { initContactForm } from '../scripts/contact-form';
+  document.querySelectorAll<HTMLFormElement>('[data-contact-form]').forEach(initContactForm);
+</script>
