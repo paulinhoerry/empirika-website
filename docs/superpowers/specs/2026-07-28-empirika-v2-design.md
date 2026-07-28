@@ -1,93 +1,96 @@
-# Empirika Website v2 — Design Spec
+# Website Empirika v2 — Spec de Design
 
-**Date:** 2026-07-28
-**Branch:** `new` (tree cleared intentionally; v1 lives on `main`)
-**Status:** Approved by Paulo (approach A, PT at root)
+**Data:** 2026-07-28
+**Branch:** `new` (árvore limpa intencionalmente; a v1 vive no `main`)
+**Status:** Aprovada pelo Paulo (abordagem A, PT na raiz, sem seção HQ Recife)
 
-## Goal
+## Objetivo
 
-New marketing site for Empirika, a Recife software house (process automation,
-software development, websites, data dashboards). Audience: startup founders,
-designers, mid-size companies — mature/enterprise tone. Bilingual PT/EN.
-Style: dark editorial like Code and Theory (reference image) — black background,
-oversized white grotesk headlines with gray second lines, monospace uppercase
-labels, 1px hairline dividers, generous negative space. References:
-codeandtheory.com, excited.agency, fantasy.co.
+Novo site institucional da Empirika, software house do Recife (automação de
+processos, desenvolvimento de software, websites, dashboards de dados).
+Público: fundadores de startups, designers, empresas de médio porte — tom
+maduro/enterprise. Bilíngue PT/EN. Estilo: dark editorial à la Code and
+Theory (imagem de referência) — fundo preto, headlines gigantes em grotesk
+branca com segunda linha cinza, labels em monospace uppercase, divisórias
+hairline de 1px, muito espaço negativo. Referências: codeandtheory.com,
+excited.agency, fantasy.co.
 
-## Approach (chosen: A)
+## Abordagem (escolhida: A)
 
-Single cinematic one-page site. Scroll-world hero (scroll-scrubbed video
-journey) at the top; sections flow below with GSAP ScrollTrigger parallax.
-Rejected: multi-page enterprise layout (breaks scroll narrative, ~2x work,
-no clear gain).
+One-page cinematográfica. Hero scroll-world (vídeo scrubado pelo scroll) no
+topo; seções fluem abaixo com parallax via GSAP ScrollTrigger.
+Rejeitada: multi-page enterprise (quebra a narrativa de scroll, ~2x de
+trabalho, sem ganho claro).
 
 ## Stack
 
-- **Astro 5** + **Tailwind 4** + **GSAP ScrollTrigger** (same stack as v1,
-  proven in this repo).
-- **scroll-world** skill (github.com/oso95/scroll-world) drives the hero:
-  Higgsfield-generated isometric world, 1080p, no audio, scrubbed by scroll
-  via its framework-agnostic `scrub-engine.js`.
-- **Resend** for the contact form via an Astro server endpoint
-  (`output: 'static'` + on-demand API route with the Vercel adapter).
-  API key via `RESEND_API_KEY` env var — never committed.
-- **impeccable** skill (restored from `main`'s `.agents/skills/impeccable`)
-  for layout/typography refinement passes.
-- i18n: JSON dictionaries; **PT at `/`**, **EN at `/en`**. Language switcher
-  in header and footer. `hreflang` alternates in `<head>`.
+- **Astro 5** + **Tailwind 4** + **GSAP ScrollTrigger** (mesma stack da v1,
+  já provada neste repo).
+- Skill **scroll-world** (github.com/oso95/scroll-world) para o hero: mundo
+  isométrico gerado no Higgsfield, 1080p, sem áudio, scrubado pelo scroll
+  com o `scrub-engine.js` (framework-agnostic) da skill.
+- **Resend** para o formulário de contato via endpoint server do Astro
+  (`output: 'static'` + rota on-demand com adapter Vercel). Chave de API na
+  variável de ambiente `RESEND_API_KEY` — nunca commitada.
+- Skill **impeccable** (restaurada do `.agents/skills/impeccable` do `main`)
+  para passes de refinamento de layout/tipografia.
+- i18n: dicionários JSON; **PT em `/`**, **EN em `/en`**. Seletor de idioma
+  no header e no footer. Alternates `hreflang` no `<head>`.
 
-## Sections (all copy written new, PT + EN)
+## Seções (copy 100% nova, PT + EN)
 
-1. **Hero** — scroll-world journey. Scene chain (proposal, tuned during
-   generation): office/code → automation flows → data dashboard → Recife port.
-   Overlaid headline in Code-and-Theory style (white line + gray line).
-   1080p landscape master; mobile fallback per scroll-world pipeline (portrait
-   canvases or crop encodes).
-2. **Capabilities** — numbered editorial rows for the four offerings:
-   process automation, software development, websites, data dashboards.
-   Ink hover + subtle parallax.
-3. **Approach** — short manifesto for founders/mid-size companies: how we
-   work, seniority, delivery, code ownership.
-4. **HQ Recife** — local presence block with full address.
-5. **Contact** — form (name, email, company, message) posting to the Resend
-   endpoint; visible mailto link as fallback. Client-side validation +
-   honeypot; success/error states in both languages.
-6. **Footer** — CNPJ 66.436.862/0001-70; Avenida Rio Branco 139, Recife PE,
-   50030-310; language switcher; social links.
+1. **Hero** — jornada scroll-world. Cadeia de cenas (proposta, ajustada
+   durante a geração): escritório/código → fluxos de automação → dashboard
+   de dados → porto do Recife. Headline sobreposta no estilo Code and Theory
+   (linha branca + linha cinza). Master 1080p paisagem; fallback mobile
+   conforme a pipeline do scroll-world (canvases portrait ou crop encodes).
+2. **Capabilities** — linhas editoriais numeradas para as quatro ofertas:
+   automação de processos, desenvolvimento de software, websites, dashboards
+   de dados. Hover de tinta + parallax sutil.
+3. **Approach** — manifesto curto para fundadores/empresas médias: como
+   trabalhamos, senioridade, entrega, propriedade do código.
+4. **Contact** — formulário (nome, e-mail, empresa, mensagem) postando no
+   endpoint Resend; mailto visível como alternativa. Validação client-side +
+   honeypot; estados de sucesso/erro nos dois idiomas.
+5. **Footer** — CNPJ 66.436.862/0001-70; Avenida Rio Branco 139, Recife PE,
+   50030-310 (endereço aparece apenas aqui); seletor de idioma; social.
 
-## Animation system
+## Sistema de animação
 
-- Hero: scroll-scrub of the generated video (scroll-world engine, canvas
-  frame-scrub with preloaded frames).
-- Below the hero: GSAP ScrollTrigger — parallax offsets on section media/
-  watermarks, reveal-on-scroll for headlines and rows, pinned moments only
-  where they aid the narrative.
-- `prefers-reduced-motion`: video shows a static poster frame; reveals become
-  simple fades; no scroll hijacking anywhere (native scroll only).
+- Hero: scrub do vídeo gerado (engine do scroll-world, frames pré-carregados
+  em canvas).
+- Abaixo do hero: GSAP ScrollTrigger — offsets de parallax em mídias/
+  watermarks das seções, reveal-on-scroll em headlines e linhas, momentos
+  pinados só onde ajudam a narrativa.
+- `prefers-reduced-motion`: vídeo vira poster estático; reveals viram fades
+  simples; nenhum scroll hijacking em lugar algum (scroll nativo sempre).
 
-## Error handling
+## Tratamento de erros
 
-- Contact endpoint: validates payload server-side, returns JSON status;
-  form shows localized success/failure; Resend failures logged, user gets
-  retry message with mailto fallback.
-- Hero: if video/frames fail to load, hero falls back to poster image +
-  headline (site remains fully usable).
+- Endpoint de contato: valida o payload no servidor, retorna JSON de status;
+  o form mostra sucesso/falha localizado; falhas do Resend são logadas e o
+  usuário recebe mensagem de retry com fallback mailto.
+- Hero: se vídeo/frames falharem ao carregar, cai para poster + headline
+  (site permanece totalmente usável).
 
-## Testing / verification
+## Testes / verificação
 
-- `astro build` clean; Playwright smoke pass over both locales (sections
-  render, form validates, language switch works).
-- Manual scroll QA at 1440/768/390 widths; reduced-motion check.
-- Contact form tested against Resend test mode before deploy.
+- `astro build` limpo; smoke test com Playwright nos dois idiomas (seções
+  renderizam, form valida, troca de idioma funciona).
+- QA manual de scroll em 1440/768/390 de largura; checagem de
+  reduced-motion.
+- Formulário testado contra o modo de teste do Resend antes do deploy.
 
-## Out of scope (YAGNI)
+## Fora de escopo (YAGNI)
 
-- CMS, blog, case-study pages, analytics, cookie banner (no tracking),
-  dark/light toggle (site is dark by design).
+- CMS, blog, páginas de case study, analytics, banner de cookies (sem
+  tracking), toggle dark/light (o site é dark por design), seção dedicada
+  ao Recife/endereço (endereço só no footer).
 
-## Dependencies / prerequisites
+## Dependências / pré-requisitos
 
-- Higgsfield CLI installed (`@higgsfield/cli` via npm) — **auth pending:
-  Paulo must run `higgsfield auth login`** and have credits (~N image gens +
-  2N−1 video gens for N scenes; N≈4 planned).
-- ffmpeg/ffprobe installed (done, via Homebrew).
+- Higgsfield CLI instalado (`@higgsfield/cli` via npm) — **autenticado**;
+  workspace "Private" (starter) com 210 créditos. Custo estimado da geração:
+  ~N imagens + (2N−1) vídeos para N cenas (N≈4); calibrar custo real pelo
+  CLI antes de gerar em lote.
+- ffmpeg/ffprobe instalados (via Homebrew).
