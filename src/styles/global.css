@@ -1,0 +1,16 @@
+@import 'tailwindcss';
+@import '@fontsource-variable/archivo';
+@import '@fontsource/ibm-plex-mono';
+
+@theme {
+  --color-ink: #000000;
+  --color-paper: #ffffff;
+  --color-mute: #9c9c9c;
+  --color-line: rgb(255 255 255 / 0.16);
+  --font-display: 'Archivo Variable', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+}
+
+html { background: var(--color-ink); color: var(--color-paper); scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body { font-family: var(--font-display); -webkit-font-smoothing: antialiased; }
