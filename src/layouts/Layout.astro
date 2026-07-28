@@ -17,5 +17,9 @@ const c = t(locale);
   </head>
   <body class="bg-ink text-paper antialiased">
     <slot />
+    <script>
+      import { initAnimations } from '../scripts/animations';
+      initAnimations();
+    </script>
   </body>
 </html>
