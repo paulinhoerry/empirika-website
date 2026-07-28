@@ -64,6 +64,16 @@
   user-select: none;
 }
 
+/* Poster role: the closing call — bigger than headline, smaller than display */
+@utility type-poster {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(2.75rem, 7vw, 6.5rem);
+  line-height: 0.9;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+}
+
 html {
   scroll-behavior: smooth;
   /* Fixed header measures ~66.5px; pad anchor jumps so section tops clear it. */

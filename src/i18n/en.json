@@ -58,6 +58,8 @@
   "contact": {
     "heading": "Shall we talk?",
     "subtitle": "Tell us what you need. We answer fast.",
+    "emailLabel": "Email",
+    "locationLabel": "Where we are",
     "email": "contato@empirika.com.br",
     "location": "Recife, Pernambuco — Brazil",
     "form": {
