@@ -22,8 +22,9 @@
   },
   "about": {
     "heading": "Quem somos",
+    "lead": "A Empirika nasceu no Recife, entre o mangue e o Porto Digital.",
     "paragraphs": [
-      "A Empirika nasceu no Recife, entre o mangue e o Porto Digital. Somos uma empresa de software que gosta de duas coisas: resolver problemas difíceis e ver código virar negócio.",
+      "Somos uma empresa de software que gosta de duas coisas: resolver problemas difíceis e ver código virar negócio.",
       "Trabalhamos em dois modos. No primeiro, construímos software sob medida para empresas que precisam de tecnologia bem feita. No segundo, criamos produtos próprios — como o CarbonTrace.",
       "Sem corporativês, sem promessa vazia. A gente prefere entregar."
     ]

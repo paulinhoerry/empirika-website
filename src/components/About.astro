@@ -3,16 +3,15 @@ import type { Dictionary } from '../i18n';
 interface Props { t: Dictionary['about']; }
 const { t } = Astro.props;
 ---
-<section id="about" class="px-gutter py-section" data-animate="reveal">
-  <div class="mx-auto max-w-[1440px]" data-animate-children>
-    <div class="flex items-center gap-5 mb-10" aria-hidden="true">
-      <span class="type-label text-muted">01</span>
-      <span class="h-px flex-1 bg-line"></span>
-    </div>
+<section id="about" class="relative overflow-clip px-gutter py-section" data-animate="reveal">
+  <span class="type-numeral absolute top-[-0.05em] right-[-0.08em] text-raised pointer-events-none" aria-hidden="true" data-numeral>01</span>
+  <div class="relative mx-auto max-w-[1440px]" data-animate-children>
+    <div class="mb-10 h-px bg-line origin-left" aria-hidden="true" data-draw-line></div>
+    <h2 class="type-label text-muted mb-8">{t.heading}</h2>
+    <p class="type-headline max-w-[24ch] mb-14">{t.lead}</p>
     <div class="lg:grid lg:grid-cols-12 lg:gap-x-8">
-      <h2 class="type-headline lg:col-span-12 mb-10">{t.heading}</h2>
-      <div class="lg:col-start-4 lg:col-span-7 max-w-[65ch]">
-        {t.paragraphs.map((p) => <p class="mb-5 text-lg leading-relaxed">{p}</p>)}
+      <div class="lg:col-start-5 lg:col-span-8 md:columns-2 md:gap-x-12">
+        {t.paragraphs.map((p) => <p class="mb-5 text-lg leading-relaxed break-inside-avoid">{p}</p>)}
       </div>
     </div>
   </div>

@@ -22,8 +22,9 @@
   },
   "about": {
     "heading": "About us",
+    "lead": "Empirika was born in Recife, between the mangroves and Porto Digital.",
     "paragraphs": [
-      "Empirika was born in Recife, between the mangroves and Porto Digital. We are a software company that loves two things: solving hard problems and watching code become business.",
+      "We are a software company that loves two things: solving hard problems and watching code become business.",
       "We work in two modes. In the first, we build custom software for companies that need technology done right. In the second, we create our own products — like CarbonTrace.",
       "No corporate jargon, no empty promises. We'd rather deliver."
     ]
