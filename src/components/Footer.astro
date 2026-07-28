@@ -1,0 +1,21 @@
+---
+import { t, type Locale } from '../i18n';
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const c = t(locale);
+---
+<footer class="border-t border-line px-6 py-16 md:px-12">
+  <div class="grid gap-10 font-mono text-xs leading-relaxed text-mute md:grid-cols-3">
+    <div>
+      <p class="mb-3 uppercase tracking-widest text-paper">Empirika</p>
+      <p>{c.footer.cnpj}</p>
+    </div>
+    <address class="not-italic">
+      {c.footer.address.map((line) => <p>{line}</p>)}
+    </address>
+    <div class="md:text-right">
+      <a href={c.nav.switchHref} class="underline underline-offset-4 hover:text-paper">{c.nav.switch}</a>
+      <p class="mt-3">{c.footer.rights}</p>
+    </div>
+  </div>
+</footer>

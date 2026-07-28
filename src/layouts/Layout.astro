@@ -1,0 +1,21 @@
+---
+import '../styles/global.css';
+import { t, altPath, htmlLang, type Locale } from '../i18n';
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const c = t(locale);
+---
+<html lang={htmlLang(locale)}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{c.meta.title}</title>
+    <meta name="description" content={c.meta.description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="alternate" hreflang={locale === 'pt' ? 'en' : 'pt-BR'} href={altPath(locale)} />
+    <link rel="alternate" hreflang={htmlLang(locale)} href={locale === 'pt' ? '/' : '/en/'} />
+  </head>
+  <body class="bg-ink text-paper antialiased">
+    <slot />
+  </body>
+</html>
