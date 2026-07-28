@@ -31,8 +31,10 @@ Criar `.env` (nunca commitado):
 | Variável | Obrigatória | Descrição |
 |---|---|---|
 | `RESEND_API_KEY` | sim | Chave da API do Resend |
-| `CONTACT_TO` | não | E-mail destino (default `paulinhoerry@gmail.com`) |
+| `CONTACT_TO` | não | E-mail destino (default `paulo@empirika.com.br`) |
 | `CONTACT_FROM` | não | Remetente (default `Empirika <onboarding@resend.dev>`; troque após verificar o domínio no Resend) |
+| `PUBLIC_TURNSTILE_SITE_KEY` | produção | Site key do Cloudflare Turnstile (default: chave de teste que sempre passa) |
+| `TURNSTILE_SECRET_KEY` | produção | Secret key do Turnstile (default: secret de teste que sempre passa) |
 
 ## Hero (scroll-world / Higgsfield)
 

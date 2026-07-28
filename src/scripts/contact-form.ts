@@ -20,6 +20,8 @@ export function initContactForm(form: HTMLFormElement): void {
       status.textContent = `${status.dataset.error ?? ''} ${status.dataset.mailto ?? ''}`.trim();
     } finally {
       btn.disabled = false;
+      // Token do Turnstile é de uso único; renova o widget após cada tentativa.
+      (window as { turnstile?: { reset: () => void } }).turnstile?.reset();
     }
   });
 }

@@ -3,7 +3,9 @@ import { t, type Locale } from '../i18n';
 interface Props { locale: Locale }
 const { locale } = Astro.props;
 const c = t(locale);
-const mailto = 'paulinhoerry@gmail.com';
+const mailto = 'paulo@empirika.com.br';
+// Turnstile: default é a chave de teste da Cloudflare (sempre passa) até configurar a real.
+const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY ?? '1x00000000000000000000AA';
 ---
 <section id="contact" class="border-t border-line px-6 py-24 md:px-12 md:py-32">
   <p class="font-mono text-xs uppercase tracking-widest text-mute" data-reveal>{c.contact.label}</p>
@@ -33,8 +35,9 @@ const mailto = 'paulinhoerry@gmail.com';
       <textarea required minlength="10" maxlength="5000" name="message" rows="5"
         class="resize-y border-b border-line bg-transparent py-3 font-display text-lg normal-case tracking-normal text-paper outline-none transition-colors focus:border-paper"></textarea>
     </label>
+    <div class="cf-turnstile" data-sitekey={turnstileSiteKey} data-theme="dark"></div>
     <button type="submit"
-      class="justify-self-start border border-paper px-8 py-4 font-mono text-xs uppercase tracking-widest transition-colors hover:bg-paper hover:text-ink disabled:opacity-50">
+      class="cursor-pointer justify-self-start border border-paper px-8 py-4 font-mono text-xs uppercase tracking-widest transition-colors hover:bg-paper hover:text-ink disabled:cursor-not-allowed disabled:opacity-50">
       {c.contact.submit}
     </button>
     <p aria-live="polite" data-status data-sending={c.contact.sending} data-success={c.contact.success}
@@ -45,6 +48,7 @@ const mailto = 'paulinhoerry@gmail.com';
   </p>
 </section>
 
+<script is:inline async src="https://challenges.cloudflare.com/turnstile/api.js"></script>
 <script>
   import { initContactForm } from '../scripts/contact-form';
   document.querySelectorAll<HTMLFormElement>('[data-contact-form]').forEach(initContactForm);

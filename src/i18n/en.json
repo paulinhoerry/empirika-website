@@ -3,28 +3,55 @@
     "title": "Empirika — Software house in Recife, Brazil",
     "description": "Process automation, software development, websites and data dashboards for companies that scale."
   },
-  "nav": { "capabilities": "Capabilities", "approach": "Approach", "contact": "Contact", "switch": "PT", "switchHref": "/" },
+  "nav": {
+    "capabilities": "Services",
+    "approach": "Approach",
+    "contact": "Contact",
+    "switch": "PT",
+    "switchHref": "/"
+  },
   "hero": {
     "line1": "We build systems that work.",
     "line2": "Automation, software and data for companies that scale.",
     "scroll": "Scroll to explore"
   },
   "capabilities": {
-    "label": "Capabilities",
+    "label": "Services",
     "items": [
-      { "title": "Process automation", "body": "Manual workflows become systems. Integrations, queues and bots that remove rework and human error." },
-      { "title": "Software development", "body": "Custom product work, from MVP to modernized legacy. Documented code, delivered in your repository." },
-      { "title": "Websites", "body": "Fast, measurable marketing sites designed to convert — not just to exist." },
-      { "title": "Data dashboards", "body": "Your operational data in panels that answer questions, not reports nobody opens." }
+      {
+        "title": "Process automation",
+        "body": "Manual workflows become systems. Integrations, queues and bots that remove rework and human error."
+      },
+      {
+        "title": "Software development",
+        "body": "Custom product work, from MVP to modernized legacy. Documented code, delivered in your repository."
+      },
+      {
+        "title": "Websites",
+        "body": "Fast, measurable marketing sites designed to convert — not just to exist."
+      },
+      {
+        "title": "Data dashboards",
+        "body": "Your operational data in panels that answer questions, not reports nobody opens."
+      }
     ]
   },
   "approach": {
     "label": "Approach",
     "title": "Senior work, no black box.",
     "items": [
-      { "title": "Direct to the makers", "body": "You talk to the people writing the code. No management layers, no broken telephone." },
-      { "title": "Shipping every week", "body": "Software in production from the first weeks. Progress you can see, not status reports." },
-      { "title": "The code is yours", "body": "Repository, infrastructure and docs under your name from the first commit. Zero lock-in." }
+      {
+        "title": "Direct to the makers",
+        "body": "You talk to the people writing the code. No management layers, no broken telephone."
+      },
+      {
+        "title": "Shipping every week",
+        "body": "Software in production from the first weeks. Progress you can see, not status reports."
+      },
+      {
+        "title": "The code is yours",
+        "body": "Repository, infrastructure and docs under your name from the first commit. Zero lock-in."
+      }
     ]
   },
   "contact": {
@@ -42,7 +69,11 @@
   },
   "footer": {
     "cnpj": "CNPJ 66.436.862/0001-70",
-    "address": ["Avenida Rio Branco 139", "Recife, Recife — PE", "50030-310"],
+    "address": [
+      "Avenida Rio Branco 139",
+      "Recife, Recife — PE",
+      "50030-310"
+    ],
     "rights": "© 2026 Empirika. All rights reserved."
   }
 }

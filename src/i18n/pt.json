@@ -3,28 +3,55 @@
     "title": "Empirika — Software house no Recife",
     "description": "Automação de processos, desenvolvimento de software, websites e dashboards de dados para empresas que crescem."
   },
-  "nav": { "capabilities": "Capacidades", "approach": "Método", "contact": "Contato", "switch": "EN", "switchHref": "/en/" },
+  "nav": {
+    "capabilities": "Serviços",
+    "approach": "Método",
+    "contact": "Contato",
+    "switch": "EN",
+    "switchHref": "/en/"
+  },
   "hero": {
     "line1": "Construímos sistemas que trabalham.",
     "line2": "Automação, software e dados para empresas que crescem.",
     "scroll": "Role para explorar"
   },
   "capabilities": {
-    "label": "Capacidades",
+    "label": "Serviços",
     "items": [
-      { "title": "Automação de processos", "body": "Fluxos manuais viram sistemas. Integrações, filas e robôs que eliminam retrabalho e erro humano." },
-      { "title": "Desenvolvimento de software", "body": "Produto sob medida, do MVP ao legado modernizado. Código documentado, entregue no seu repositório." },
-      { "title": "Websites", "body": "Sites institucionais rápidos, mensuráveis e desenhados para converter — não só para existir." },
-      { "title": "Dashboards de dados", "body": "Seus dados operacionais em painéis que respondem perguntas, não relatórios que ninguém abre." }
+      {
+        "title": "Automação de processos",
+        "body": "Fluxos manuais viram sistemas. Integrações, filas e robôs que eliminam retrabalho e erro humano."
+      },
+      {
+        "title": "Desenvolvimento de software",
+        "body": "Produto sob medida, do MVP ao legado modernizado. Código documentado, entregue no seu repositório."
+      },
+      {
+        "title": "Websites",
+        "body": "Sites institucionais rápidos, mensuráveis e desenhados para converter — não só para existir."
+      },
+      {
+        "title": "Dashboards de dados",
+        "body": "Seus dados operacionais em painéis que respondem perguntas, não relatórios que ninguém abre."
+      }
     ]
   },
   "approach": {
     "label": "Método",
     "title": "Trabalho sênior, sem caixa preta.",
     "items": [
-      { "title": "Direto com quem faz", "body": "Você fala com quem escreve o código. Sem camadas de gerência, sem telefone sem fio." },
-      { "title": "Entrega toda semana", "body": "Software em produção desde as primeiras semanas. Progresso que se vê, não status report." },
-      { "title": "O código é seu", "body": "Repositório, infraestrutura e documentação no seu nome desde o primeiro commit. Zero lock-in." }
+      {
+        "title": "Direto com quem faz",
+        "body": "Você fala com quem escreve o código. Sem camadas de gerência, sem telefone sem fio."
+      },
+      {
+        "title": "Entrega toda semana",
+        "body": "Software em produção desde as primeiras semanas. Progresso que se vê, não status report."
+      },
+      {
+        "title": "O código é seu",
+        "body": "Repositório, infraestrutura e documentação no seu nome desde o primeiro commit. Zero lock-in."
+      }
     ]
   },
   "contact": {
@@ -42,7 +69,11 @@
   },
   "footer": {
     "cnpj": "CNPJ 66.436.862/0001-70",
-    "address": ["Avenida Rio Branco 139", "Recife, Recife — PE", "50030-310"],
+    "address": [
+      "Avenida Rio Branco 139",
+      "Recife, Recife — PE",
+      "50030-310"
+    ],
     "rights": "© 2026 Empirika. Todos os direitos reservados."
   }
 }

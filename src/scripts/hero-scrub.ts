@@ -66,6 +66,8 @@ export function initHeroScrub(section: HTMLElement): void {
           }
         },
       });
+      // O pin muda as posições de tudo abaixo do hero; recalcula os triggers já criados.
+      ScrollTrigger.refresh();
       apply();
     })
     .catch(() => {
