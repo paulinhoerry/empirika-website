@@ -11,6 +11,10 @@
   --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
 }
 
+/* Hero: linha base em contorno; a camada de fill é revelada pelo scroll (hero-scrub). */
+.hero-line-outline { -webkit-text-stroke-width: 1px; -webkit-text-stroke-color: currentColor; -webkit-text-fill-color: transparent; }
+.hero-line-fill { position: absolute; inset: 0; }
+
 html { background: var(--color-ink); color: var(--color-paper); scroll-behavior: smooth; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 body { font-family: var(--font-display); -webkit-font-smoothing: antialiased; }

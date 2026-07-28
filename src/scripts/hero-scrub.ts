@@ -13,6 +13,10 @@ export function initHeroScrub(section: HTMLElement): void {
   const desktop = window.matchMedia('(min-width: 768px) and (pointer: fine)').matches;
   if (reduced || !desktop) return;
 
+  // Só quando o scrub vai acontecer: headline começa em outline e preenche no scroll.
+  const fills = section.querySelectorAll<HTMLElement>('[data-line-fill]');
+  gsap.set(fills, { clipPath: 'inset(-5% 100% -5% 0)' });
+
   fetch(src)
     .then((r) => (r.ok ? r.blob() : Promise.reject(new Error(String(r.status)))))
     .then(
@@ -46,10 +50,18 @@ export function initHeroScrub(section: HTMLElement): void {
         pin: true,
         scrub: true,
         onUpdate: (self) => {
-          target = self.progress * Math.max(0, video.duration - 0.05);
+          const p = self.progress;
+          target = p * Math.max(0, video.duration - 0.05);
           apply();
+          // Linhas preenchem em sequência (1ª: 0–35%, 2ª: 15–55% do scrub).
+          const clamp01 = (n: number) => Math.min(1, Math.max(0, n));
+          const spans = [clamp01(p / 0.35), clamp01((p - 0.15) / 0.4)];
+          fills.forEach((el, i) => {
+            gsap.set(el, { clipPath: `inset(-5% ${100 * (1 - (spans[i] ?? 1))}% -5% 0)` });
+          });
+          // Copy sai de cena só no trecho final, antes do porto.
           if (copy) {
-            const fade = Math.min(1, self.progress * 2.2);
+            const fade = clamp01((p - 0.72) / 0.23);
             gsap.set(copy, { opacity: 1 - fade, y: -48 * fade });
           }
         },
@@ -57,6 +69,7 @@ export function initHeroScrub(section: HTMLElement): void {
       apply();
     })
     .catch(() => {
-      /* fallback: poster estático segue visível, página totalmente usável */
+      /* fallback: poster estático segue visível e a headline volta a preenchida */
+      gsap.set(fills, { clipPath: 'none' });
     });
 }
