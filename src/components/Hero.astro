@@ -1,0 +1,16 @@
+---
+import { t, type Locale } from '../i18n';
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const c = t(locale);
+---
+<section id="hero" data-hero class="relative flex h-[100svh] items-end overflow-hidden bg-ink">
+  <canvas data-hero-canvas hidden class="absolute inset-0 h-full w-full object-cover"></canvas>
+  <div data-hero-copy class="relative z-10 w-full px-6 pb-20 md:px-12">
+    <h1 class="font-display text-[clamp(2.5rem,7.5vw,7rem)] font-semibold leading-[0.98] tracking-tight">
+      <span class="block text-paper">{c.hero.line1}</span>
+      <span class="block text-mute">{c.hero.line2}</span>
+    </h1>
+    <p class="mt-12 font-mono text-xs uppercase tracking-widest text-mute" data-scroll-cue>{c.hero.scroll} ↓</p>
+  </div>
+</section>
