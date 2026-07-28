@@ -1,0 +1,18 @@
+---
+import { t, type Locale } from '../i18n';
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const c = t(locale);
+---
+<section id="capabilities" class="border-t border-line px-6 py-24 md:px-12 md:py-32">
+  <p class="font-mono text-xs uppercase tracking-widest text-mute" data-reveal>{c.capabilities.label}</p>
+  <ol class="mt-12">
+    {c.capabilities.items.map((item, i) => (
+      <li class="group border-b border-line py-10 transition-colors hover:bg-paper hover:text-ink md:grid md:grid-cols-12 md:items-baseline md:gap-8 md:px-4" data-reveal>
+        <span class="font-mono text-sm text-mute md:col-span-1">0{i + 1}</span>
+        <h2 class="mt-2 font-display text-3xl font-semibold tracking-tight md:col-span-5 md:mt-0 md:text-5xl">{item.title}</h2>
+        <p class="mt-4 max-w-md text-mute group-hover:text-ink/70 md:col-span-6 md:mt-0">{item.body}</p>
+      </li>
+    ))}
+  </ol>
+</section>

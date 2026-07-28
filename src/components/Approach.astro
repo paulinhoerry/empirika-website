@@ -1,0 +1,19 @@
+---
+import { t, type Locale } from '../i18n';
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const c = t(locale);
+---
+<section id="approach" class="border-t border-line px-6 py-24 md:px-12 md:py-32">
+  <p class="font-mono text-xs uppercase tracking-widest text-mute" data-reveal>{c.approach.label}</p>
+  <h2 class="mt-8 max-w-3xl font-display text-4xl font-semibold leading-tight tracking-tight md:text-6xl" data-reveal>{c.approach.title}</h2>
+  <div class="mt-16 grid gap-12 md:grid-cols-3" data-parallax-group>
+    {c.approach.items.map((item, i) => (
+      <div data-reveal>
+        <span class="font-mono text-sm text-mute">0{i + 1}</span>
+        <h3 class="mt-3 font-display text-xl font-semibold">{item.title}</h3>
+        <p class="mt-3 text-mute">{item.body}</p>
+      </div>
+    ))}
+  </div>
+</section>
